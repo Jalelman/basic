@@ -40,6 +40,7 @@ Route::controller(AdminController::class)->group(function (){
 //home slider routes
 Route::controller(HomeSliderController::class)->group(function (){
     Route::get('/home/slide', 'HomeSlider')->name('home.slide');
+    Route::post('/home/slider/update', 'UpdateSlider')->name('home.slide.update');
 });
 //front-office routes
 Route::get('/', function () {

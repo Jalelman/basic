@@ -9,18 +9,16 @@
 <div class="col-12">
     <div class="card">
         <div class="card-body">
-
-            <h4 class="card-title">Home Slider Page </h4>
-            
-            <form method="post" action="{{ route('admin.profile.update') }}" enctype="multipart/form-data">
+            <h4 class="card-title">Home Slider Page </h4>           
+            <form method="post" action="{{ route('home.slide.update') }}" enctype="multipart/form-data">
                 @csrf
-
-            <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">title</label>
-                <div class="col-sm-10">
-                    <input name="title" class="form-control" type="text" value="{{ $homeslide->title }}"  id="example-text-input">
+                <input type="hidden" name="id" value="{{$homeslide->id}}">
+                <div class="row mb-3">
+                    <label for="example-text-input" class="col-sm-2 col-form-label">title</label>
+                    <div class="col-sm-10">
+                        <input name="title" class="form-control" type="text" value="{{ $homeslide->title }}"  id="example-text-input">
+                    </div>
                 </div>
-            </div>
             <!-- end row -->
 
               <div class="row mb-3">
@@ -32,27 +30,27 @@
             <!-- end row -->
 
 
-              <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Video URL</label>
-                <div class="col-sm-10">
-                    <input name="video_url" class="form-control" type="text" value="{{ $homeslide->video_url }}"  id="example-text-input">
+                <div class="row mb-3">
+                    <label for="example-text-input" class="col-sm-2 col-form-label">Video URL</label>
+                    <div class="col-sm-10">
+                        <input name="video_url" class="form-control" type="text" value="{{ $homeslide->video_url }}"  id="example-text-input">
+                    </div>
                 </div>
-            </div>
             <!-- end row -->
 
 
-            <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Slider Image </label>
-                <div class="col-sm-10">
-                    <input name="home_slide" class="form-control" type="file"  id="home_slide">
+                <div class="row mb-3">
+                    <label for="example-text-input" class="col-sm-2 col-form-label">Slider Image </label>
+                    <div class="col-sm-10">
+                        <input name="home_slide" class="form-control" type="file"  id="home_slide">
+                    </div>
                 </div>
-            </div>
             <!-- end row -->
 
             <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
                 <div class="col-sm-10">
-                    <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($homeslide->home_slide))? url('upload/home_slider/'.$homeslide->home_slide):url('upload/admin.png') }}" alt="Card image cap">
+                    <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($homeslide->home_slide))? url( $homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Card image cap">
                 </div>
             </div>
             <!-- end row -->
