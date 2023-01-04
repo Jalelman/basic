@@ -9,7 +9,7 @@ use Image;
 class HomeSliderController extends Controller
 {
     public function HomeSlider(){
-        $homeslide =HomeSlide::find(1) ;
+        $homeslide =HomeSlide::find(1);
         return view('/admin.home_slide.home_slide_all',compact('homeslide'));
     }
     //End Method
@@ -22,8 +22,8 @@ class HomeSliderController extends Controller
             $image = $request->file('home_slide');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();  // 3434343443.jpg
 
-            Image::make($image)->resize(636,852)->save('upload/home_slider/'.$name_gen);
-            $save_url = 'upload/home_slider/'.$name_gen;
+            Image::make($image)->resize(636,852)->save('upload/home_slide/'.$name_gen);
+            $save_url = 'upload/home_slide/'.$name_gen;
 
             HomeSlide::findOrFail($slide_id)->update([
                 'title' => $request->title,
