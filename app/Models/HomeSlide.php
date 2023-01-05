@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class HomeSlide extends Model
 {
-    //usi,g eloquent ORM
+    //using eloquent ORM
     use HasFactory;
     protected $guarded=[];
     /* protected $fillable = [

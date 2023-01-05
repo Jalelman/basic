@@ -9,7 +9,7 @@
 <div class="col-12">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Home Slider Page </h4>           
+            <h4 class="card-title">Set Up Home Slider Page </h4>           
             <form method="post" action="{{ route('home.slide.update') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{$homeslide->id}}">
